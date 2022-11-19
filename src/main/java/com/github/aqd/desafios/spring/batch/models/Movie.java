@@ -12,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,7 +37,7 @@ import lombok.ToString;
 @AttributeOverride(name = "id", column = @Column(name = "movie_id"))
 public class Movie extends AbsEntity {
 	
-	@Column(name = "year")
+	@Column(name = "\"year\"")
 	Integer year;
 	
 	@Column(name = "title", length = 100)
@@ -53,6 +55,7 @@ public class Movie extends AbsEntity {
 				inverseJoinColumns = {@JoinColumn(table="producer", name = "producer_id")})
 	List<Producer> producers;
 	
+	@NotNull
 	@Column(name = "winner")
 	Boolean winner;
 

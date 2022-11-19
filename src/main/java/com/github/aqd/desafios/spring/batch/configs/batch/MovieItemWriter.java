@@ -31,21 +31,23 @@ public class MovieItemWriter extends JpaItemWriter<Movie> {
 	@Override
 	public void write(List<? extends Movie> items) {
 		items.forEach(item -> {
-			
 			List<Studio> studios = item.getStudios();
 			List<Producer> producers = item.getProducers();
+			
+			Movie movie = Movie
+							.builder()
+								.year(item.getYear())
+								.title(item.getTitle())
+								.winner(item.getWinner())
+							.build();
+			
+			movie = movieRepository.save(movie);
 
-			item.setProducers(null);
-			item.setStudios(null);
+			movie.setStudios(studios);
+			movie.setProducers(producers);
 			
-			item = movieRepository.save(item);
-
-			item.setStudios(studios);
-			item.setProducers(producers);
-			
-			saveStudios(item);
-			saveProducers(item);
-			
+			saveStudios(movie);
+			saveProducers(movie);
 		});
 	}
 
