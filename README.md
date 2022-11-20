@@ -10,6 +10,11 @@ Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/proj
 
 - [Spring Boot With Spring Batch](https://www.baeldung.com/spring-boot-spring-batch)
 - [How to Trigger and Stop a Scheduled Spring Batch Job](https://www.baeldung.com/spring-batch-start-stop-job)
+- [QueryDSL](http://querydsl.com)
+- [Lombok](https://projectlombok.org)
+- [H2](https://www.h2database.com/html/main.html)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Maven](https://maven.apache.org)
 - More articles [[<-- prev]](/spring-batch)
 
 

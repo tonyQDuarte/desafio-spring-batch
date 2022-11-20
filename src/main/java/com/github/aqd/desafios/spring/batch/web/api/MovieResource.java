@@ -22,10 +22,10 @@ import lombok.experimental.FieldDefaults;
  * @author antonio.duarte
  *
  */
-@RequiredArgsConstructor
-@FieldDefaults(level = PRIVATE, makeFinal = true)
-@RequestMapping(path = "movies")
 @RestController
+@RequiredArgsConstructor
+@RequestMapping(path = "movies")
+@FieldDefaults(level = PRIVATE, makeFinal = true)
 public class MovieResource {
 
 	MovieService service;
