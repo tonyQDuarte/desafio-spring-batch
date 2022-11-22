@@ -71,8 +71,8 @@ public class MovieResourceTest {
 					.json("[{"
 							+ "\"producer\":\"Matthew Vaughn\","
 							+ "\"previousWin\":2002,"
-							+ "\"followingWin\":2015,"
-							+ "\"interval\":13"
+							+ "\"followingWin\":2028,"
+							+ "\"interval\":26"
 						+ "}]"));
 		} catch (Exception e) {
 			log.error(e.toString());
@@ -101,8 +101,8 @@ public class MovieResourceTest {
 								+ "{"
 									+ "\"producer\":\"Matthew Vaughn\","
 									+ "\"previousWin\":2002,"
-									+ "\"followingWin\":2015,"
-									+ "\"interval\":13"
+									+ "\"followingWin\":2028,"
+									+ "\"interval\":26"
 								+ "}"
 							+ "]"
 						+ "}"));

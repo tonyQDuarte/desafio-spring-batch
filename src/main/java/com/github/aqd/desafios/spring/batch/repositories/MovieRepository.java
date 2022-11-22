@@ -28,30 +28,41 @@ extends JpaRepository<Movie, Long>,
 	
 	@Query(	nativeQuery = true,
 			value	= "SELECT  "
-						+ "MIN(WM.INTERVALO), "
+						+ "WM.INTERVALO, "
 						+ "WM.PRODUCER, "
 						+ "WM.PREVIOUSWIN, "
 						+ "WM.FOLLOWINGWIN "
 					+ "FROM "
 						+ "WINNING_MOVIES WM "
+					+ "WHERE "
+						+ "WM.INTERVALO = (SELECT MIN(WM2.INTERVALO) FROM WINNING_MOVIES WM2) "
 					+ "GROUP BY "
-						+ "WM.INTERVALO HAVING MIN(WM.INTERVALO) = (SELECT MIN(WM2.INTERVALO) FROM WINNING_MOVIES WM2) "
+						+ "WM.INTERVALO, "
+						+ "WM.PRODUCER, "
+						+ "WM.PREVIOUSWIN, "
+						+ "WM.FOLLOWINGWIN"
 		 	)
 	List<Object[]> getMinInterval();
 	
 	@Query(	nativeQuery = true,
 			value	= "SELECT  "
-						+ "MAX(WM.INTERVALO), "
+						+ "WM.INTERVALO, "
 						+ "WM.PRODUCER, "
 						+ "WM.PREVIOUSWIN, "
 						+ "WM.FOLLOWINGWIN "
 					+ "FROM "
 						+ "WINNING_MOVIES WM "
+					+ "WHERE "
+						+ "WM.INTERVALO = (SELECT MAX(WM2.INTERVALO) FROM WINNING_MOVIES WM2) "
 					+ "GROUP BY "
-						+ "WM.INTERVALO HAVING MAX(WM.INTERVALO) = (SELECT MAX(WM2.INTERVALO) FROM WINNING_MOVIES WM2) "
+						+ "WM.INTERVALO, "
+						+ "WM.PRODUCER, "
+						+ "WM.PREVIOUSWIN, "
+						+ "WM.FOLLOWINGWIN"
 		 	)
 	List<Object[]> getMaxInterval();
 
 	@Query("FROM Movie ")
 	List<Movie> listarTodos();
+	
 }

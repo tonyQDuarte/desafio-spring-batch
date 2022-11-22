@@ -1,6 +1,7 @@
 # Desafio-spring-batch
 
 Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/projects/spring-batch).
+
 ## Autore(s)
 
 - [@antonio.duarte](https://github.com/tonyQDuarte)
@@ -19,6 +20,49 @@ Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/proj
 2. Install Lombok plugin on Intellij IDEA Plugin window;
 3. Clone project using VCS.
 
+## Run App
+
+```
+mvn spring-boot:run
+```
+
+## Run Tests
+
+```
+
+```
+
+## REST API
+
+Request
+
+```
+GET /movies/winners/smallest-and-greater-interval
+```
+
+Response
+
+```
+{
+    "min": [
+        {
+            "producer": "Joel Silver",
+            "previousWin": 1990,
+            "followingWin": 1991,
+            "interval": 1
+        }
+    ],
+    "max": [
+        {
+            "producer": "Matthew Vaughn",
+            "previousWin": 2002,
+            "followingWin": 2015,
+            "interval": 13
+        }
+    ]
+}
+```
+
 ## Referência
 
 - [Spring Boot With Spring Batch](https://www.baeldung.com/spring-boot-spring-batch)
@@ -29,8 +73,5 @@ Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/proj
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Maven](https://maven.apache.org)
 - More articles [[<-- prev]](/spring-batch)
-
-
-## REST API
 
 
