@@ -11,15 +11,13 @@ Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/proj
 2. Install [Lombok](https://projectlombok.org) on it by running lombok JAR and pointing 
    to IDE binary;   
 3. Clone project using GIT view;
-4. Import as Maven project;
-5. Run using profile "dev";
+4. Import as Maven project.
 
 ### IntelliJ IDEA (Community/Ultimate)
 
 1. Download [IDEA](https://www.jetbrains.com/idea)
 2. Install Lombok plugin on Intellij IDEA Plugin window;
-3. Clone project using VCS
-4. Run using profile "dev";
+3. Clone project using VCS.
 
 ## Referência
 
