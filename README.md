@@ -5,7 +5,7 @@ Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/proj
 
 - [@antonio.duarte](https://github.com/tonyQDuarte)
 
-### STS/Eclipse
+## STS/Eclipse
 
 1. Download [STS](https://spring.io/tools) or [Eclipse](https://www.eclipse.org);
 2. Install [Lombok](https://projectlombok.org) on it by running lombok JAR and pointing 
@@ -13,7 +13,7 @@ Projeto com um desafio técnico envolvendo [spring-batch](https://spring.io/proj
 3. Clone project using GIT view;
 4. Import as Maven project.
 
-### IntelliJ IDEA (Community/Ultimate)
+## IntelliJ IDEA (Community/Ultimate)
 
 1. Download [IDEA](https://www.jetbrains.com/idea)
 2. Install Lombok plugin on Intellij IDEA Plugin window;
