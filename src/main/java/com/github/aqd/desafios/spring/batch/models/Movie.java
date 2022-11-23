@@ -43,13 +43,13 @@ public class Movie extends AbsEntity {
 	@Column(name = "title", length = 100)
 	String title;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany
 	@JoinTable(	name = "movie_studio",
 				joinColumns = {@JoinColumn(table="movie", name = "movie_id")},
 				inverseJoinColumns = {@JoinColumn(table="studio", name = "studio_id")})
 	List<Studio> studios;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(	name = "movie_producer",
 				joinColumns = {@JoinColumn(table="movie", name = "movie_id")},
 				inverseJoinColumns = {@JoinColumn(table="producer", name = "producer_id")})

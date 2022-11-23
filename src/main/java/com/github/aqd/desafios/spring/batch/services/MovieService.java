@@ -42,10 +42,10 @@ public class MovieService {
 			movies.forEach(item -> {
 				winningMovies.add(WinningMovieDTO
 									.builder()
-										.interval((Integer) item[0])
-										.producer((String) item[1])
-										.previousWin((Integer) item[2])
-										.followingWin((Integer) item[3])
+										.producer((String) item[0])
+										.previousWin((Integer) item[1])
+										.followingWin((Integer) item[2])
+										.interval((Integer) item[3])
 									.build());
 				
 			});
@@ -61,10 +61,10 @@ public class MovieService {
 			movies.forEach(item -> {
 				winningMovies.add(WinningMovieDTO
 									.builder()
-										.interval((Integer) item[0])
-										.producer((String) item[1])
-										.previousWin((Integer) item[2])
-										.followingWin((Integer) item[3])
+										.producer((String) item[0])
+										.previousWin((Integer) item[1])
+										.followingWin((Integer) item[2])
+										.interval((Integer) item[3])
 									.build());
 			});
 		}

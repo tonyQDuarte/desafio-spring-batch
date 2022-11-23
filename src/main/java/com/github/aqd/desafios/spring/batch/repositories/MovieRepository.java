@@ -27,41 +27,31 @@ extends JpaRepository<Movie, Long>,
 	}
 	
 	@Query(	nativeQuery = true,
-			value	= "SELECT  "
-						+ "WM.INTERVALO, "
-						+ "WM.PRODUCER, "
-						+ "WM.PREVIOUSWIN, "
-						+ "WM.FOLLOWINGWIN "
+			value	= "SELECT "
+					    + "WP.PRODUCER, "
+					    + "WP.PREVIOUSWIN, "
+					    + "WP.FOLLOWINGWIN, "
+					    + "WP.INTERVALO "
 					+ "FROM "
-						+ "WINNING_MOVIES WM "
+					    + "WINNING_PRODUCERS WP "
 					+ "WHERE "
-						+ "WM.INTERVALO = (SELECT MIN(WM2.INTERVALO) FROM WINNING_MOVIES WM2) "
-					+ "GROUP BY "
-						+ "WM.INTERVALO, "
-						+ "WM.PRODUCER, "
-						+ "WM.PREVIOUSWIN, "
-						+ "WM.FOLLOWINGWIN"
+					    + "WP.INTERVALO = (SELECT MIN(WP2.INTERVALO) FROM WINNING_PRODUCERS WP2)"
 		 	)
 	List<Object[]> getMinInterval();
 	
 	@Query(	nativeQuery = true,
-			value	= "SELECT  "
-						+ "WM.INTERVALO, "
-						+ "WM.PRODUCER, "
-						+ "WM.PREVIOUSWIN, "
-						+ "WM.FOLLOWINGWIN "
+			value	= "SELECT "
+					    + "WP.PRODUCER, "
+					    + "WP.PREVIOUSWIN, "
+					    + "WP.FOLLOWINGWIN, "
+					    + "WP.INTERVALO "
 					+ "FROM "
-						+ "WINNING_MOVIES WM "
+					    + "WINNING_PRODUCERS WP "
 					+ "WHERE "
-						+ "WM.INTERVALO = (SELECT MAX(WM2.INTERVALO) FROM WINNING_MOVIES WM2) "
-					+ "GROUP BY "
-						+ "WM.INTERVALO, "
-						+ "WM.PRODUCER, "
-						+ "WM.PREVIOUSWIN, "
-						+ "WM.FOLLOWINGWIN"
+					    + "WP.INTERVALO = (SELECT MAX(WP2.INTERVALO) FROM WINNING_PRODUCERS WP2)"
 		 	)
 	List<Object[]> getMaxInterval();
-
+	
 	@Query("FROM Movie ")
 	List<Movie> listarTodos();
 	

@@ -68,12 +68,20 @@ public class MovieResourceTest {
 					.accept(MediaType.APPLICATION_JSON))
 			.andExpect(status().isOk())
 			.andExpect(content()
-					.json("[{"
-							+ "\"producer\":\"Matthew Vaughn\","
-							+ "\"previousWin\":2002,"
-							+ "\"followingWin\":2028,"
-							+ "\"interval\":26"
-						+ "}]"));
+					.json("["
+							+ "{"
+								+ "\"producer\": \"Matthew Vaughn\","
+								+ "\"previousWin\": 2002,"
+								+ "\"followingWin\": 2015,"
+								+ "\"interval\": 13"
+							+ "},"
+							+ "{"
+								+ "\"producer\": \"Matthew Vaughn\","
+								+ "\"previousWin\": 2015,"
+								+ "\"followingWin\": 2028,"
+								+ "\"interval\": 13"
+							+ "}"
+						+ "]"));
 		} catch (Exception e) {
 			log.error(e.toString());
 			fail(e.getMessage());
@@ -99,10 +107,16 @@ public class MovieResourceTest {
 							+ "],"
 							+ "\"max\":["
 								+ "{"
-									+ "\"producer\":\"Matthew Vaughn\","
-									+ "\"previousWin\":2002,"
-									+ "\"followingWin\":2028,"
-									+ "\"interval\":26"
+									+ "\"producer\": \"Matthew Vaughn\","
+									+ "\"previousWin\": 2002,"
+									+ "\"followingWin\": 2015,"
+									+ "\"interval\": 13"
+								+ "},"
+								+ "{"
+									+ "\"producer\": \"Matthew Vaughn\","
+									+ "\"previousWin\": 2015,"
+									+ "\"followingWin\": 2028,"
+									+ "\"interval\": 13"
 								+ "}"
 							+ "]"
 						+ "}"));
